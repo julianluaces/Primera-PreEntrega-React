@@ -8,7 +8,7 @@ const ItemListContainer = ({greeting}) => {
   return (
     <div>
         
-        <p  align="center"> {greeting} </p>
+        <p className='greeting'> {greeting} </p>
 
     </div>
   )
