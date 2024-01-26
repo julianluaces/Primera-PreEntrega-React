@@ -2,7 +2,7 @@ import React from 'react'
 import CartWidget from './CartWidget'
 import { Flex, Spacer, Box, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
 import './styles.css'
-import ItemCount from './ItemCount'
+
 
 const Navbar = () => {
     return (
@@ -12,7 +12,7 @@ const Navbar = () => {
             <Flex>
 
                 <Box p='6' >
-                    My Ecommerce
+                  SYS COMPUTACIÓN
                 </Box>
 
                 <Spacer />
@@ -24,6 +24,8 @@ const Navbar = () => {
                     <MenuList>
                         <MenuItem>Notebooks</MenuItem>
                         <MenuItem>PC de Escritorio</MenuItem>
+                        <MenuItem>Sillas Gamer</MenuItem>
+                        <MenuItem>Periféricos</MenuItem>
                     </MenuList>
                 </Menu>
 

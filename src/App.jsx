@@ -1,45 +1,40 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar'
+import Navbar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
-import ItemCount from './components/ItemCount'
-import Home from './components/Home'
-import About from './components/About'
-import ContactUs from './components/ContactUs'
-import Cart from './components/Cart'
-
+import ItemDetailContainer from './components/ItemDetailContainer'
+import Nosotros from './components/Nosotros'
+import Footer from './components/Footer'
+import { CartProvider } from './context/cartContext'
 
 const App = () => {
 
   return (
 
-
-    <BrowserRouter>
-
-      <Navbar />
-
-      <ItemListContainer greeting={"Bienvenidos a my Eccomerce!"} />
-
-      <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log ("Cantidad aregada" , quantity)} />
-
-      <Routes>
+    <CartProvider>
 
 
-        <Route path='./home' element={<Home />} />
-        <Route path='./about' element={<About />} />
-        <Route path='./cart' element={<Cart />} />
-        <Route path='./contactUs' element={<ContactUs />} />
-        <Route path='./itemCount' element={<ItemCount />} />
-
-
-      </Routes>
+      <BrowserRouter>
 
 
 
 
+        <Navbar />
 
-    </BrowserRouter>
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/item' element={<ItemDetailContainer itemId={2} />} />
+          <Route path='/nosotros' element={<Nosotros />} />
+        </Routes>
 
+
+        <Footer />
+
+
+
+      </BrowserRouter>
+
+    </CartProvider>
   )
 
 }
